@@ -1,0 +1,19 @@
+/* Estilo para la tabla */
+table {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+/* Estilo para los th y los td */
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Estilo para los th */
+th  {
+background-color: lightgrey;
+}
