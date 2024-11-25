@@ -8,8 +8,16 @@ include("conexionPDO.php");
 // Creamos la conexión
 $conexion = conexion($servidor);
 
+// Guardamos la carpeta
+$carpeta = "../ficheros/";
+
+// Verifica si la carpeta existe, si no, la crea
+if (!is_dir($carpeta)) {
+    mkdir($carpeta, 0777, true); // Crea la carpeta con permisos 0777
+}
+
 // Guardamos y abrimos el archivo
-$nombreArchivo = "listadoPersonas.txt";
+$nombreArchivo = $carpeta . "/listadoPersonas.txt";
 $fp = fopen($nombreArchivo, 'a+');
 
 // Si el archivo se ha abierto correctamente
@@ -33,9 +41,8 @@ if ($fp) {
         // Mientras que haya registros, los mostramos
         while ($fila = $sentencia->fetch()) {
 
-            $linea = "ID: $fila->id_persona, Nombre: $fila->nombre,
-            Apellidos: $fila->apellidos, Teléfono: $fila->telefono,
-            Edad: $fila->edad" . "\n";
+            // Guardamos los datos en un array asociativo
+            $linea = "ID: $fila->id_persona, Nombre: $fila->nombre, Apellidos: $fila->apellidos, Telefono: $fila->telefono, Edad: $fila->edad\n";
 
             // Escribimos en el archivo fila a fila
             fwrite($fp, $linea);
@@ -57,8 +64,15 @@ fclose($fp);
 // Abrimos el fichero
 $fp = fopen($nombreArchivo, "r");
 
-// Leemos el fichero
-$contents = fread($fp, filesize($nombreArchivo));
+// Comprobamos que el tamaño sea mayor que 0
+if(filesize($nombreArchivo) > 0) {
+
+    // Leemos el fichero
+    $contents = fread($fp, filesize($nombreArchivo));
+
+} else {
+    $contents = "";
+}
 
 ?>
 
@@ -83,7 +97,7 @@ $contents = fread($fp, filesize($nombreArchivo));
         <?php
 
         // Dividimos el contenido en líneas
-        $lineas = explode("\n", trim($contents));
+        $lineas = array_filter(array_map('trim', explode("\n", $contents)));
 
         // Recorremos el array de líneas
         foreach ($lineas as $linea) {
@@ -94,6 +108,8 @@ $contents = fread($fp, filesize($nombreArchivo));
                 // Dividimos la línea en partes utilizando la coma como delimitador
                 $campos = explode(", ", $linea);
 
+                if(count($campos) === 5) {
+
                 // Extraemos los valores eliminando la etiqueta ("ID:", "Nombre:", etc.)
                 $id = str_replace("ID: ", "", trim($campos[0])); //
                 $nombre = str_replace("Nombre: ", "", trim($campos[1]));
@@ -103,14 +119,15 @@ $contents = fread($fp, filesize($nombreArchivo));
 
         ?>
                 <tr>
-                    <td><?php echo $id ?></td> // Campo para el ID
-                    <td><?php echo $nombre ?></td> // Campo para el nombre
-                    <td><?php echo $apellidos ?></td> // Campo para los apellidos
-                    <td><?php echo $telefono ?></td> // Campo para el teléfono
-                    <td><?php echo $edad ?></td> // Campo para la edad
+                    <td><?php echo $id ?></td> <!-- Campo para el ID -->
+                    <td><?php echo $nombre ?></td> <!-- Campo para el nombre -->
+                    <td><?php echo $apellidos ?></td> <!-- Campo para los apellidos -->
+                    <td><?php echo $telefono ?></td> <!-- Campo para el teléfono -->
+                    <td><?php echo $edad ?></td> <!-- Campo para la edad -->
                 </tr>
         <?php
-            }
+        }
+        }
         }
         ?>
 
