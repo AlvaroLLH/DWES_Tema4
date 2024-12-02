@@ -1,7 +1,8 @@
 <?php
 
     /*
-    Crea un script que genere un pdf con encabezado y pie que incluya una imagen, un enlace y texto de un archivo (listado de las personas o alumnos). Mejora: cada registro en una página
+    Crea un script que genere un pdf con encabezado y pie que incluya una imagen, un enlace y
+    texto de un archivo (listado de las personas o alumnos). Mejora: cada registro en una página
     */
 
     // Incluimos la biblioteca de FPDF
