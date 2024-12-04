@@ -3,3 +3,8 @@ ID: 3, Nombre: Julian, Apellidos: Alvarez Perez, Telefono: 5485136581, Edad: 25
 ID: 5, Nombre: Pedro, Apellidos: Perrote Gomez, Telefono: 54654545, Edad: 30
 ID: 6, Nombre: Alvaro, Apellidos: Llamas Huerta, Telefono: 696297608, Edad: 22
 ID: 7, Nombre: Neo, Apellidos: Armada Montero, Telefono: 692307277, Edad: 23
+ID: 2, Nombre: Fernando, Apellidos: Gomez Garcia, Telefono: 469848458, Edad: 30
+ID: 3, Nombre: Julian, Apellidos: Alvarez Perez, Telefono: 5485136581, Edad: 25
+ID: 5, Nombre: Pedro, Apellidos: Perrote Gomez, Telefono: 54654545, Edad: 30
+ID: 6, Nombre: Alvaro, Apellidos: Llamas Huerta, Telefono: 696297608, Edad: 22
+ID: 7, Nombre: Neo, Apellidos: Armada Montero, Telefono: 692307277, Edad: 23
