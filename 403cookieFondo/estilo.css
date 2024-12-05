@@ -1,0 +1,27 @@
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Botón para el tema oscuro */
+.dark {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Botón para el tema claro */
+.light {
+    background-color: #ffffff;
+    color: #000000;
+}
