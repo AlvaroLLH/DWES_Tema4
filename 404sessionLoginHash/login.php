@@ -1,5 +1,11 @@
 <?php
 
+// Creamos la contraseña
+$password = "admin";
+
+// Almacenamos la contraseña
+$cadena_hash = password_hash($password, PASSWORD_DEFAULT);
+
 // Comprobamos si ya se ha enviado el formulario
 if(isset($_POST['enviar'])) {
     $usuario = $_POST['inputUsuario'];
@@ -11,7 +17,9 @@ if(isset($_POST['enviar'])) {
         include("index_.php");
 
     } else {
-        if($usuario == "admin" && $password == "admin") {
+
+        // Si el usuario es admin y la contraseña es admin
+        if($usuario == "admin" && password_verify($password, $cadena_hash)) {
 
             // Almacenamos el usuario en la sesión
             session_start();
