@@ -1,0 +1,52 @@
+/* Estilo general para la tabla */
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+/* Estilo general para los th y td */
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilo para los th*/
+th {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Estilo para los tr */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para los botones */
+.btn-modificar, .btn-eliminar, .btn-agregar {
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* Estilo para el botón de modificar */
+.btn-modificar {
+    background-color: #007bff;
+}
+
+/* Estilo para el botón de eliminar */
+.btn-eliminar {
+    background-color: #dc3545;
+}
+
+/* Estilo para el botón de agregar */
+.btn-agregar {
+    background-color: #28a745;
+}
+
+/* Estilo para el hover de los botones */
+.btn-modificar:hover, .btn-eliminar:hover, .btn-agregar:hover {
+    opacity: 0.8;
+}
