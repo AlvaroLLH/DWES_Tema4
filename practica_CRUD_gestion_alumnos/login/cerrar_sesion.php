@@ -10,7 +10,7 @@ session_unset();
 session_destroy();
 
 // Redirigimos a la página de login
-header("Location: ../vista/login.php");
+header("Location: login.php");
 exit;
 
 ?>

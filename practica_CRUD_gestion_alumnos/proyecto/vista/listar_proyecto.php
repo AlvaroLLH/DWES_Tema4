@@ -2,17 +2,21 @@
 
     // Declaramos el titulo y la hoja de estilos a usar
     $titulo = "Listar Proyecto";
-    $estilo = "css/estiloListar.css";
+    $estilo = "css/estiloTabla.css";
 
     // Incluimos el encabezado, la conexión y la biblioteca de FPDF
     include("encabezado.php");
     include("../config/conexion.php");
-    require("../../../../fpdf/fpdf.php");
+    require("../../../../../fpdf/fpdf.php");
 
     // Creamos la conexión
     $conexion = conexion();
 
 ?>
+
+    <div>
+    <a href="cerrar_sesion.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
+    </div>
 
 <h1>Listado de Proyectos</h1>
 

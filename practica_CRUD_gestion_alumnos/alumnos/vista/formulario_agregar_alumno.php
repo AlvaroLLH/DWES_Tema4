@@ -1,6 +1,15 @@
     <?php $titulo = "formulario_agregar_alumno"; 
     include("encabezado.php"); ?>
 
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFormulario.css">
+    </head>
+    <body>
+
     <!-- Formulario que permite agregar un nuevo registro a nuestra tabla, que llamara a agregar_alumno -->
 
     <h3>Formulario Agregar</h3>
@@ -37,5 +46,8 @@
 
     <!-- Boton de envío -->
     <p><input type="submit" value="Agregar alumno"></p>
+        
+    </body>
+    </html>
 
     <?php include("pie.php"); ?>

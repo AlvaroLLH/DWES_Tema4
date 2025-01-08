@@ -36,13 +36,14 @@ if(isset($_POST['enviar'])) {
 
                         // Almacenamos el usuario en la sesión
                         $_SESSION['usuario'] = $usuario;
+                        $_SESSION['tipo_usu'] = $resultado['tipo_usu'];
 
                         // Redirigimos según el tipo de usuario
                         if($resultado['tipo_usu'] == 1) {
-                            header("Location: listar_proyecto.php"); // Página del admin
+                            header("Location: ver_crud.php");
                             exit;
                         } else if ($resultado['tipo_usu'] == 2) {
-                            header("Location: index_tutor.php"); // Página del tutor
+                            header("Location: index_tutor.php");
                             exit;
                         }
                     } else {
@@ -68,17 +69,17 @@ if(isset($_POST['enviar'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="login.css"> <!-- Vinculación del CSS -->
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
     <!-- Contenedor principal -->
     <div class="login-container">
-        <h1>Inicio de Sesión</h1> <!-- Título principal -->
+        <h1>Inicio de Sesión</h1>
 
         <!-- Mostramos un mensaje de error si existe -->
         <?php if (isset($error)): ?>
-            <p style="color: red;"><?php echo htmlspecialchars($error); ?></p> <!-- Mensaje de error -->
+            <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
         <?php endif; ?>
 
         <!-- Formulario de login -->
@@ -93,7 +94,5 @@ if(isset($_POST['enviar'])) {
         </form>
 
     </div>
-
 </body>
-
 </html>

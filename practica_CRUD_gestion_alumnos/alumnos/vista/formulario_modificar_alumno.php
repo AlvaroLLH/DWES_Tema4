@@ -7,19 +7,19 @@
     include("../config/conexion.php");
 
     // Guardamos el ID recibido por URL
-    $id_tutor = $_GET["id_tutor"];
+    $id_alumno = $_GET["id_alumno"];
 
     // Mensaje si no se introduce un ID
-    if(!isset($id_tutor) || !is_numeric($id_tutor)) {
+    if(!isset($id_alumno) || !is_numeric($id_alumno)) {
         die("No se ha introducido un ID o es inválido");
     }
 
     // Creamos la consulta
-    $sql = "SELECT * FROM tutor WHERE id_tutor = ?";
+    $sql = "SELECT * FROM alumnos WHERE id_alumno = ?";
 
     // Creamos la sentencia
     $sentencia = $mysqli_conexion -> prepare($sql);
-    $sentencia -> bind_param("i", $id_tutor); // Vinculamos el ID como un entero
+    $sentencia -> bind_param("i", $id_alumno); // Vinculamos el ID como un entero
 
     // Ejecutamos la sentencia
     $sentencia -> execute();
@@ -40,6 +40,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloFormulario.css">
 </head>
 <body>
 
