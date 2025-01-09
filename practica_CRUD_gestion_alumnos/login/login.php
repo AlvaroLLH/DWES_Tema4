@@ -37,13 +37,14 @@ if(isset($_POST['enviar'])) {
                         // Almacenamos el usuario en la sesión
                         $_SESSION['usuario'] = $usuario;
                         $_SESSION['tipo_usu'] = $resultado['tipo_usu'];
+                        $_SESSION['id_tutor'] = $resultado['id_tutor'];
 
                         // Redirigimos según el tipo de usuario
                         if($resultado['tipo_usu'] == 1) {
                             header("Location: ver_crud.php");
                             exit;
                         } else if ($resultado['tipo_usu'] == 2) {
-                            header("Location: index_tutor.php");
+                            header("Location: ../tutor/vista/ver_tutor.php");
                             exit;
                         }
                     } else {
@@ -69,7 +70,7 @@ if(isset($_POST['enviar'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 

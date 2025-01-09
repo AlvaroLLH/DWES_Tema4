@@ -15,7 +15,7 @@
 ?>
 
     <div>
-    <a href="cerrar_sesion.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
+    <a href="../../login/cerrar_sesion.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
     </div>
 
 <h1>Listado de Proyectos</h1>

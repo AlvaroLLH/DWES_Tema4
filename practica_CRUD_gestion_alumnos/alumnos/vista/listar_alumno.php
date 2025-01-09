@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/estiloTabla.css">
 
     <div>
-    <a href="cerrar_sesion.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
+    <a href="../../login/cerrar_sesion.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
     </div>
 
     <h1>Listado de Alumnos</h1>
