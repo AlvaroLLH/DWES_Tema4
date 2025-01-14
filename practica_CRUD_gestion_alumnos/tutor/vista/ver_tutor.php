@@ -32,11 +32,16 @@
         // Verificamos si se encontró el tutor
         if ($stmt->rowCount() > 0) {
             $tutor = $stmt->fetch(PDO::FETCH_ASSOC);
-            
+        
+            // Verificar si los datos del tutor son válidos
+            if (!$tutor) {
+                die("Error al obtener los datos del tutor.");
+            }
         } else {
             die("No se encontró ningún tutor con el ID proporcionado.");
         }
 
+        // Gestionamos la excepción
     } catch (PDOException $e) {
         die("Error en la base de datos: " . $e->getMessage());
     }
@@ -49,14 +54,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel del Tutor</title>
-    <link rel="stylesheet" href="css/estiloTabla.css">
+    <link rel="stylesheet" href="css/estiloTutor.css">
 </head>
 <body>
 
     <!-- Botón para cerrar sesión -->
     <a href="../../login/cerrar_sesion.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
     
-    <h1>Bienvenido, <?php echo $tutor['nombre']; ?></h1>
+    <h1>Bienvenid@, <?php echo $tutor['nombre']; ?></h1>
 
     <ul>
         <li><strong>Nombre:</strong> <?php echo $tutor['nombre']; ?></li>

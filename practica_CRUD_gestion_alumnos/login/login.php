@@ -19,7 +19,7 @@ if(isset($_POST['enviar'])) {
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Consulta para obtener el tipo de usuario y contraseña
-            $query = "SELECT tipo_usu, password, activar FROM tutor WHERE login = :login";
+            $query = "SELECT id_tutor, tipo_usu, password, activar FROM tutor WHERE login = :login";
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(':login', $usuario, PDO::PARAM_STR);
             $stmt->execute();
